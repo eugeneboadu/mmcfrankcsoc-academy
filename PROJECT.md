@@ -86,27 +86,26 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - Set up .gitignore
 - Pushed to GitHub
 
-### Phase 2 - Frontend Public Pages 🔄 IN PROGRESS
-Current step: Building About page
+### Phase 2 - Frontend Public Pages ✅ COMPLETE
 - [x] Cleaned up default Vite files
 - [x] Installed React Router
 - [x] Created src/pages, src/components, src/styles folders
 - [x] Created variables.css design system
-- [x] Create Navbar component
-- [x] Create Footer component
-- [x] Build Home page
-- [ ] Build About page
-- [ ] Build Field Stories page
-- [ ] Build Join Us / Registration page
-- [ ] Build Contact page
+- [x] Created Navbar component
+- [x] Created Footer component
+- [x] Built Home page
+- [x] Built About page
+- [x] Built Field Stories page
+- [x] Built Join Us / Registration page
+- [x] Built Contact page
 
-### Phase 3 - Backend API (NOT STARTED)
-- Express server setup
-- MongoDB connection
-- Member registration API
-- Admin authentication API
-- Blog posts API
-
+### Phase 3 - Backend API 🔄 NEXT
+Current step: Setting up Express server
+- [ ] Set up Express server in index.js
+- [ ] Connect to MongoDB Atlas
+- [ ] Build Member registration API
+- [ ] Build Admin authentication API
+- [ ] Build Blog posts API
 ### Phase 4 - Connect Frontend to Backend (NOT STARTED)
 - Registration form submits to database
 - Blog posts pulled from database

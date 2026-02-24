@@ -2,6 +2,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import About from './pages/About'
+import Stories from './pages/Stories'
+import Join from './pages/Join'
+import Contact from './pages/Contact'
 
 function App() {
   return (
@@ -9,10 +13,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<h1>About Page</h1>} />
-        <Route path="/stories" element={<h1>Field Stories</h1>} />
-        <Route path="/join" element={<h1>Join Us</h1>} />
-        <Route path="/contact" element={<h1>Contact</h1>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/stories" element={<Stories />} />
+        <Route path="/join" element={<Join />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>

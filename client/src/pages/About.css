@@ -1,0 +1,254 @@
+/* ABOUT HERO */
+.about-hero {
+  background: linear-gradient(135deg, var(--primary-green-dark) 0%, var(--primary-green) 100%);
+  padding: 100px 20px;
+  text-align: center;
+  color: var(--cream-white);
+}
+
+.about-hero h1 {
+  font-size: 2.8rem;
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.about-hero h1 span {
+  color: var(--warm-gold);
+}
+
+.about-hero p {
+  color: var(--cream-dark);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* OUR STORY */
+.our-story {
+  padding: var(--section-padding);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-text h2 {
+  font-size: 2rem;
+  color: var(--primary-green-dark);
+  margin-bottom: 20px;
+}
+
+.story-text p {
+  color: var(--gray-text);
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.story-symbol-card {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  border-radius: var(--radius-lg);
+  padding: 50px 40px;
+  text-align: center;
+  color: var(--cream-white);
+}
+
+.big-symbol {
+  font-size: 5rem;
+  color: var(--warm-gold);
+  display: block;
+  margin-bottom: 15px;
+}
+
+.story-symbol-card h3 {
+  font-size: 1.8rem;
+  color: var(--warm-gold);
+  margin-bottom: 5px;
+}
+
+.symbol-meaning {
+  font-size: 1rem;
+  color: var(--cream-dark);
+  margin-bottom: 20px;
+}
+
+.symbol-desc {
+  font-size: 0.95rem;
+  color: var(--cream-dark);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* MISSION VISION VALUES */
+.mvv {
+  background-color: var(--cream-dark);
+  padding: var(--section-padding);
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.mvv-card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 35px 25px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s;
+}
+
+.mvv-card:hover {
+  transform: translateY(-5px);
+}
+
+.mvv-card.mission {
+  border-top: 4px solid var(--primary-green);
+}
+
+.mvv-card.vision {
+  border-top: 4px solid var(--warm-gold);
+}
+
+.mvv-card.values {
+  border-top: 4px solid var(--primary-green-light);
+}
+
+.mvv-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.mvv-card h3 {
+  color: var(--primary-green-dark);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.mvv-card p {
+  color: var(--gray-text);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* DIFFERENT */
+.different {
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+.different h2 {
+  font-size: 2rem;
+  color: var(--primary-green-dark);
+  margin-bottom: 15px;
+}
+
+.different-intro {
+  color: var(--gray-text);
+  max-width: 650px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+.different-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.different-card {
+  background-color: var(--cream-dark);
+  border-radius: var(--radius-md);
+  padding: 30px 20px;
+  transition: transform 0.3s;
+}
+
+.different-card:hover {
+  transform: translateY(-5px);
+}
+
+.different-card span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.different-card h4 {
+  color: var(--primary-green-dark);
+  margin-bottom: 10px;
+}
+
+.different-card p {
+  color: var(--gray-text);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ABOUT CTA */
+.about-cta {
+  padding: var(--section-padding);
+}
+
+.about-cta .cta-box {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  border-radius: var(--radius-lg);
+  padding: 60px 40px;
+  text-align: center;
+  color: var(--cream-white);
+}
+
+.about-cta .cta-symbol {
+  font-size: 3rem;
+  color: var(--warm-gold);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.about-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.about-cta p {
+  color: var(--cream-dark);
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mvv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .different-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .different-grid {
+    grid-template-columns: 1fr;
+  }
+}
