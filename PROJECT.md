@@ -87,13 +87,14 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - Pushed to GitHub
 
 ### Phase 2 - Frontend Public Pages 🔄 IN PROGRESS
-Current step: Setting up design system and folder structure
+Current step: Building About page
 - [x] Cleaned up default Vite files
 - [x] Installed React Router
 - [x] Created src/pages, src/components, src/styles folders
-- [ ] Create Navbar component
-- [ ] Create Footer component
-- [ ] Build Home page
+- [x] Created variables.css design system
+- [x] Create Navbar component
+- [x] Create Footer component
+- [x] Build Home page
 - [ ] Build About page
 - [ ] Build Field Stories page
 - [ ] Build Join Us / Registration page
