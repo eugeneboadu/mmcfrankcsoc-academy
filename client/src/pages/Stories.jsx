@@ -1,88 +1,84 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { getPublishedPosts } from '../api'
 import './Stories.css'
 
-const sampleStories = [
-  {
-    id: 1,
-    title: "Introducing AI To Students At Kumasi",
-    location: "Kumasi, Ashanti Region",
-    date: "February 2026",
-    excerpt: "We visited our first school and introduced over 30 students to the basics of artificial intelligence. The excitement on their faces was unforgettable.",
-    tag: "AI Education"
-  },
-  {
-    id: 2,
-    title: "Teaching Basic Computer Skills",
-    location: "Kumasi, Ashanti Region",
-    date: "February 2026",
-    excerpt: "Many of the students had never touched a computer before. Watching them type their first words and navigate a screen for the first time was a powerful moment.",
-    tag: "IT Skills"
-  },
-  {
-    id: 3,
-    title: "Our Third School Visit — Growing Impact",
-    location: "Kumasi, Ashanti Region",
-    date: "February 2026",
-    excerpt: "By our third visit we had refined our approach and the sessions were more interactive than ever. Students asked questions that surprised even us.",
-    tag: "Community"
-  }
-]
-
 function Stories() {
+  const [posts, setPosts] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const { data } = await getPublishedPosts()
+        setPosts(data)
+      } catch (error) {
+        console.log('Error fetching posts:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchPosts()
+  }, [])
+
   return (
     <main className="stories">
 
-      {/* PAGE HERO */}
       <section className="stories-hero">
         <div className="container">
           <span className="section-label">Field Stories</span>
           <h1>From The <span>Ground</span></h1>
           <p>
-            Real stories from real school visits. Every post here represents 
+            Real stories from real school visits. Every post here represents
             a moment where technology education reached a child who needed it.
           </p>
         </div>
       </section>
 
-      {/* STORIES GRID */}
       <section className="stories-grid-section">
         <div className="container">
-          <div className="stories-grid">
-            {sampleStories.map(story => (
-              <div className="story-card" key={story.id}>
-                <div className="story-card-image">
-                  <span className="story-symbol">⊕</span>
-                </div>
-                <div className="story-card-body">
-                  <div className="story-meta">
-                    <span className="story-tag">{story.tag}</span>
-                    <span className="story-date">{story.date}</span>
+          {loading ? (
+            <div className="stories-loading">
+              <span>⊕</span>
+              <p>Loading stories...</p>
+            </div>
+          ) : posts.length === 0 ? (
+            <div className="no-stories">
+              <span>⊕</span>
+              <h2>Stories Coming Soon</h2>
+              <p>We are out in the field right now. Check back soon for updates from our school visits.</p>
+            </div>
+          ) : (
+            <div className="stories-grid">
+              {posts.map(post => (
+                <div className="story-card" key={post._id}>
+                  <div className="story-card-image">
+                    <span className="story-symbol">⊕</span>
                   </div>
-                  <h3>{story.title}</h3>
-                  <p className="story-location">📍 {story.location}</p>
-                  <p className="story-excerpt">{story.excerpt}</p>
-                  <Link to={`/stories/${story.id}`} className="story-read-more">
-                    Read Full Story →
-                  </Link>
+                  <div className="story-card-body">
+                    <div className="story-meta">
+                      <span className="story-tag">{post.location}</span>
+                      <span className="story-date">
+                        {new Date(post.date).toLocaleDateString('en-GB', {
+                          year: 'numeric',
+                          month: 'long'
+                        })}
+                      </span>
+                    </div>
+                    <h3>{post.title}</h3>
+                    <p className="story-location">📍 {post.location}</p>
+                    <p className="story-excerpt">{post.content.substring(0, 150)}...</p>
+                    <Link to={`/stories/${post._id}`} className="story-read-more">
+                      Read Full Story →
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      {/* EMPTY STATE — shown when no stories */}
-      {sampleStories.length === 0 && (
-        <section className="no-stories">
-          <div className="container">
-            <span>⊕</span>
-            <h2>Stories Coming Soon</h2>
-            <p>We are out in the field right now. Check back soon for updates from our school visits.</p>
-          </div>
-        </section>
-      )}
-
-      {/* CTA */}
       <section className="stories-cta">
         <div className="container">
           <div className="cta-box">

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { registerMember } from '../api'
 import './Join.css'
 
 function Join() {
@@ -16,6 +17,8 @@ function Join() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const skillOptions = [
     'Teaching',
@@ -38,10 +41,18 @@ function Join() {
     setFormData({ ...formData, skills: updated })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+    try {
+      await registerMember(formData)
+      setSubmitted(true)
+    } catch (error) {
+      setError(error.response?.data?.message || 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {
@@ -255,8 +266,9 @@ function Join() {
                   </select>
                 </div>
 
-                <button type="submit" className="submit-btn">
-                  Submit Application ⊕
+                {error && <p className="form-error">{error}</p>}
+                <button type="submit" className="submit-btn" disabled={loading}>
+                  {loading ? 'Submitting...' : 'Submit Application ⊕'}
                 </button>
 
               </form>

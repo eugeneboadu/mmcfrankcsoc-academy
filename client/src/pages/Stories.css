@@ -183,3 +183,16 @@
     padding: 40px 20px;
   }
 }
+
+.stories-loading {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--gray-text);
+}
+
+.stories-loading span {
+  font-size: 4rem;
+  color: var(--warm-gold);
+  display: block;
+  margin-bottom: 20px;
+}

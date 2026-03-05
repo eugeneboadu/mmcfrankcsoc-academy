@@ -260,3 +260,10 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.form-error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
