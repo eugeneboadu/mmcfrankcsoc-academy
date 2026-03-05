@@ -121,19 +121,19 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Connected Stories page to backend
 - [x] Added loading and error states to forms
 
-### Phase 5 - Admin Dashboard 🔄 NEXT
-Current step: Building admin login page
-- [ ] Build Admin Login page
-- [ ] Build protected Dashboard route
-- [ ] Build Dashboard Home
-- [ ] Build Member Management page
-- [ ] Build Blog Management page
+### Phase 5 - Admin Dashboard ✅ COMPLETE
+- [x] Built Admin Login page
+- [x] Built Dashboard Home with stats
+- [x] Built Member Management page
+- [x] Built Blog Management page
+- [x] Connected all dashboard routes in App.jsx
 
-### Phase 6 - Deployment (NOT STARTED)
-- MongoDB Atlas setup
-- Deploy backend to Render
-- Deploy frontend to Vercel
-
+### Phase 6 - Deployment 🔄 NEXT
+- [ ] Set up MongoDB Atlas properly
+- [ ] Deploy backend to Render
+- [ ] Deploy frontend to Vercel
+- [ ] Seed admin accounts
+- [ ] Test full application live
 ---
 
 ## Key Decisions Made
