@@ -99,22 +99,35 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Built Join Us / Registration page
 - [x] Built Contact page
 
-### Phase 3 - Backend API 🔄 NEXT
-Current step: Setting up Express server
-- [ ] Set up Express server in index.js
-- [ ] Connect to MongoDB Atlas
-- [ ] Build Member registration API
-- [ ] Build Admin authentication API
-- [ ] Build Blog posts API
-### Phase 4 - Connect Frontend to Backend (NOT STARTED)
-- Registration form submits to database
-- Blog posts pulled from database
-- Admin login connected
+### Phase 3 - Backend API ✅ COMPLETE
+- [x] Set up Express server in index.js
+- [x] Connected to MongoDB Atlas (pending network test)
+- [x] Built Member model
+- [x] Built Admin model
+- [x] Built Post model
+- [x] Built member routes
+- [x] Built auth routes
+- [x] Built post routes
+- [x] Built auth middleware
+- [x] Built member controller
+- [x] Built auth controller
+- [x] Built post controller
+- [x] Created admin seed script
 
-### Phase 5 - Admin Dashboard (NOT STARTED)
-- Protected admin routes
-- Member management interface
-- Blog management interface
+### Phase 4 - Connect Frontend to Backend ✅ COMPLETE
+- [x] Installed axios
+- [x] Created src/api.js with all API functions
+- [x] Connected Join Us form to backend
+- [x] Connected Stories page to backend
+- [x] Added loading and error states to forms
+
+### Phase 5 - Admin Dashboard 🔄 NEXT
+Current step: Building admin login page
+- [ ] Build Admin Login page
+- [ ] Build protected Dashboard route
+- [ ] Build Dashboard Home
+- [ ] Build Member Management page
+- [ ] Build Blog Management page
 
 ### Phase 6 - Deployment (NOT STARTED)
 - MongoDB Atlas setup
