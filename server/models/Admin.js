@@ -1,0 +1,35 @@
+const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
+
+const adminSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true,
+    trim: true
+  },
+  passwordHash: {
+    type: String,
+    required: true
+  },
+  role: {
+    type: String,
+    default: 'admin'
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+})
+
+adminSchema.methods.comparePassword = async function(password) {
+  return await bcrypt.compare(password, this.passwordHash)
+}
+
+module.exports = mongoose.model('Admin', adminSchema)
