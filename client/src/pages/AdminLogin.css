@@ -1,0 +1,107 @@
+.admin-login {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-green-dark) 0%, var(--primary-green) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admin-login-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-md);
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.admin-symbol {
+  font-size: 3rem;
+  color: var(--warm-gold);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.admin-login-header h2 {
+  color: var(--primary-green-dark);
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.admin-login-header p {
+  color: var(--gray-text);
+  font-size: 0.9rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: var(--primary-green-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: var(--font-main);
+  color: var(--dark-text);
+  background-color: var(--cream-white);
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-green);
+}
+
+.login-error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-green);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-main);
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: var(--primary-green-dark);
+}
+
+.login-back {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.login-back a {
+  color: var(--gray-text);
+  transition: color 0.3s;
+}
+
+.login-back a:hover {
+  color: var(--primary-green);
+}

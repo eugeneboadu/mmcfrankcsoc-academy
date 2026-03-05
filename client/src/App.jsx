@@ -6,19 +6,25 @@ import About from './pages/About'
 import Stories from './pages/Stories'
 import Join from './pages/Join'
 import Contact from './pages/Contact'
+import AdminLogin from './pages/AdminLogin'
+import Dashboard from './pages/Dashboard'
+import Members from './pages/Members'
+import BlogManagement from './pages/BlogManagement'
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/stories" element={<Stories />} />
-        <Route path="/join" element={<Join />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/" element={<><Navbar /><Home /><Footer /></>} />
+        <Route path="/about" element={<><Navbar /><About /><Footer /></>} />
+        <Route path="/stories" element={<><Navbar /><Stories /><Footer /></>} />
+        <Route path="/join" element={<><Navbar /><Join /><Footer /></>} />
+        <Route path="/contact" element={<><Navbar /><Contact /><Footer /></>} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/members" element={<Members />} />
+        <Route path="/dashboard/blog" element={<BlogManagement />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   )
 }

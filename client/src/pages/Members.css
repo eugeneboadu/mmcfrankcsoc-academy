@@ -1,0 +1,237 @@
+/* FILTER TABS */
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 2px solid var(--light-gray);
+  background-color: var(--white);
+  color: var(--gray-text);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.filter-tab:hover {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+.filter-tab.active {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+  color: var(--white);
+}
+
+/* TABLE */
+.members-table {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.members-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.members-table th {
+  background-color: var(--cream-dark);
+  color: var(--primary-green-dark);
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.members-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--cream-dark);
+  color: var(--dark-text);
+  font-size: 0.9rem;
+}
+
+.members-table tr:last-child td {
+  border-bottom: none;
+}
+
+.members-table tr:hover td {
+  background-color: var(--cream-white);
+}
+
+/* STATUS BADGE */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.approved {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-badge.rejected {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+/* ACTION BUTTONS */
+.action-btns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.view-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  background-color: var(--cream-dark);
+  color: var(--primary-green-dark);
+  font-size: 0.85rem;
+  font-family: var(--font-main);
+  transition: all 0.3s;
+}
+
+.view-btn:hover {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.approve-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  background-color: #d1e7dd;
+  color: #0f5132;
+  font-size: 0.85rem;
+  font-family: var(--font-main);
+  transition: all 0.3s;
+}
+
+.approve-btn:hover {
+  background-color: #0f5132;
+  color: var(--white);
+}
+
+.reject-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  background-color: #f8d7da;
+  color: #842029;
+  font-size: 0.85rem;
+  font-family: var(--font-main);
+  transition: all 0.3s;
+}
+
+.reject-btn:hover {
+  background-color: #842029;
+  color: var(--white);
+}
+
+/* NO DATA */
+.no-data {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--gray-text);
+}
+
+.no-data span {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  width: 100%;
+  max-width: 550px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-md);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.modal-header h2 {
+  color: var(--primary-green-dark);
+  font-size: 1.3rem;
+}
+
+.modal-header button {
+  background: none;
+  font-size: 1.2rem;
+  color: var(--gray-text);
+  transition: color 0.3s;
+}
+
+.modal-header button:hover {
+  color: red;
+}
+
+.modal-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 10px;
+}
+
+.modal-row span {
+  color: var(--primary-green-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.modal-row p {
+  color: var(--gray-text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.modal-footer {
+  padding: 20px 25px;
+  border-top: 1px solid var(--cream-dark);
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
