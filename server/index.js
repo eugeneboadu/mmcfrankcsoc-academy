@@ -31,7 +31,6 @@ app.get('/', (req, res) => {
   })
 })
 
-
 // Database connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
