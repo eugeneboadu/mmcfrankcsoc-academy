@@ -128,22 +128,22 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Built Blog Management page
 - [x] Connected all dashboard routes in App.jsx
 
-### Phase 6 - Deployment 🔄 NEXT
-- [ ] Set up MongoDB Atlas properly
-- [ ] Deploy backend to Render
-- [ ] Deploy frontend to Vercel
-- [ ] Seed admin accounts
-- [ ] Test full application live
+### Phase 6 - Deployment ✅ COMPLETE
+- [x] Added start script for deployment
+- [x] Deployed backend to Render
+- [x] Connected MongoDB Atlas on Render
+- [x] Deployed frontend to Vercel
+- [x] Fixed React Router on Vercel
+- [x] Seeded admin accounts
+- [x] Removed seed route for security
+- [x] Fixed mobile responsiveness
+
+## Live URLs
+- Frontend: https://mmcfrankcsoc-academy.vercel.app
+- Backend: https://mmcfrankcsoc-academy.onrender.com
+- Admin Panel: https://mmcfrankcsoc-academy.vercel.app/admin
+
+## Admin Credentials
+- Email: eugene@mmcfrankcsoc.org
+- Password: Mmcadmin2024
 ---
-
-## Key Decisions Made
-- Admin only dashboard (members do not get dashboard access)
-- 3 admin accounts maximum, created manually for security
-- Member registration status flow: Pending → Approved/Rejected
-- Nyansapo symbol chosen as brand identity
-- Free hosting stack chosen (NGO budget consideration)
-
----
-
-## Current Status
-Phase 6 in progress - About to start
