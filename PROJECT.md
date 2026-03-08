@@ -146,4 +146,4 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 ---
 
 ## Current Status
-Phase 2 in progress - About to build Navbar component
+Phase 6 in progress - About to start
