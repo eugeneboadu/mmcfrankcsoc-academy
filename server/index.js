@@ -31,6 +31,31 @@ app.get('/', (req, res) => {
   })
 })
 
+app.get('/seed-admins', async (req, res) => {
+  try {
+    const bcrypt = require('bcryptjs')
+    const Admin = require('./models/Admin')
+
+    await Admin.deleteMany({})
+
+    const admins = [
+      { name: 'Eugene Boadu', email: 'eugene@mmcfrankcsoc.org' },
+      { name: 'Admin Two', email: 'admin2@mmcfrankcsoc.org' },
+      { name: 'Admin Three', email: 'admin3@mmcfrankcsoc.org' }
+    ]
+
+    for (let admin of admins) {
+      const salt = await bcrypt.genSalt(10)
+      admin.passwordHash = await bcrypt.hash('Mmcadmin2024', salt)
+      admin.role = 'admin'
+    }
+
+    await Admin.insertMany(admins)
+    res.json({ message: '✅ Admins seeded successfully' })
+  } catch (error) {
+    res.json({ message: '❌ Seeding failed', error: error.message })
+  }
+})
 // Database connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
