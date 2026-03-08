@@ -16,6 +16,7 @@
   gap: 60px;
   align-items: center;
   width: 100%;
+  overflow: hidden;
 }
 
 .hero-symbol {
@@ -142,12 +143,14 @@
 .impact {
   background-color: var(--cream-dark);
   padding: 60px 20px;
+  overflow: hidden;
 }
 
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  overflow: hidden;
 }
 
 .impact-card {
