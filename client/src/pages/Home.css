@@ -336,17 +336,19 @@
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 20px;
+    padding: 60px 15px;
+    min-height: auto;
   }
 
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 30px;
+    padding: 0;
   }
 
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .hero-buttons {
@@ -357,8 +359,18 @@
     display: none;
   }
 
+  .impact {
+    padding: 40px 15px;
+  }
+
   .impact-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .impact-card {
+    width: 100%;
   }
 
   .who-grid {
@@ -366,24 +378,16 @@
   }
 
   .what-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .cta-box {
-    padding: 40px 20px;
+    padding: 40px 15px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .impact-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .what-grid {
-    grid-template-columns: 1fr;
+    font-size: 1.6rem;
   }
 }
