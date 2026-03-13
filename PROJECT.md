@@ -146,6 +146,15 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Members receive rejection email when rejected
 - [x] Added RESEND_API_KEY to Render environment
 
+### Phase 8 - Photo Upload ✅ COMPLETE
+- [x] Installed Cloudinary and Multer
+- [x] Created Cloudinary configuration
+- [x] Updated post routes to handle photo uploads
+- [x] Updated post controller to save photo URLs
+- [x] Updated Blog Management to upload real photos
+- [x] Updated Stories page to display real photos
+- [x] Added Cloudinary credentials to Render
+
 ## Live URLs
 - Frontend: https://mmcfrankcsoc-academy.vercel.app
 - Backend: https://mmcfrankcsoc-academy.onrender.com
