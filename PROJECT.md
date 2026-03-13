@@ -138,6 +138,14 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Removed seed route for security
 - [x] Fixed mobile responsiveness
 
+### Phase 7 - Email Notifications ✅ COMPLETE
+- [x] Installed Resend email service
+- [x] Created email templates (confirmation, approval, rejection)
+- [x] Members receive confirmation email on registration
+- [x] Members receive approval email when accepted
+- [x] Members receive rejection email when rejected
+- [x] Added RESEND_API_KEY to Render environment
+
 ## Live URLs
 - Frontend: https://mmcfrankcsoc-academy.vercel.app
 - Backend: https://mmcfrankcsoc-academy.onrender.com
