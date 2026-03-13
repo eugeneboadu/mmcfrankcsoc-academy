@@ -21,8 +21,12 @@ export const getAdminProfile = () => API.get('/auth/profile')
 
 export const getPublishedPosts = () => API.get('/posts/published')
 export const getAllPosts = () => API.get('/posts')
-export const createPost = (postData) => API.post('/posts', postData)
-export const updatePost = (id, postData) => API.put(`/posts/${id}`, postData)
+export const createPost = (formData) => API.post('/posts', formData, {
+  headers: { 'Content-Type': 'multipart/form-data' }
+})
+export const updatePost = (id, formData) => API.put(`/posts/${id}`, formData, {
+  headers: { 'Content-Type': 'multipart/form-data' }
+})
 export const deletePost = (id) => API.delete(`/posts/${id}`)
 
 export default API

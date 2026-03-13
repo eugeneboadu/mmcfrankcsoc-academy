@@ -53,7 +53,11 @@ function Stories() {
               {posts.map(post => (
                 <div className="story-card" key={post._id}>
                   <div className="story-card-image">
-                    <span className="story-symbol">⊕</span>
+                    {post.photoUrl ? (
+                      <img src={post.photoUrl} alt={post.title} />
+                    ) : (
+                      <span className="story-symbol">⊕</span>
+                    )}
                   </div>
                   <div className="story-card-body">
                     <div className="story-meta">

@@ -20,10 +20,12 @@ const getAllPosts = async (req, res) => {
 
 const createPost = async (req, res) => {
   try {
-    const post = await Post.create({
+    const postData = {
       ...req.body,
-      author: req.admin.name
-    })
+      author: req.admin.name,
+      photoUrl: req.file ? req.file.path : ''
+    }
+    const post = await Post.create(postData)
     res.status(201).json({ message: 'Post created successfully', post })
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message })
@@ -32,16 +34,21 @@ const createPost = async (req, res) => {
 
 const updatePost = async (req, res) => {
   try {
+    const updateData = {
+      ...req.body,
+      updatedAt: Date.now()
+    }
+    if (req.file) {
+      updateData.photoUrl = req.file.path
+    }
     const post = await Post.findByIdAndUpdate(
       req.params.id,
-      { ...req.body, updatedAt: Date.now() },
+      updateData,
       { new: true }
     )
-
     if (!post) {
       return res.status(404).json({ message: 'Post not found' })
     }
-
     res.status(200).json({ message: 'Post updated successfully', post })
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message })
@@ -51,11 +58,9 @@ const updatePost = async (req, res) => {
 const deletePost = async (req, res) => {
   try {
     const post = await Post.findByIdAndDelete(req.params.id)
-
     if (!post) {
       return res.status(404).json({ message: 'Post not found' })
     }
-
     res.status(200).json({ message: 'Post deleted successfully' })
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message })

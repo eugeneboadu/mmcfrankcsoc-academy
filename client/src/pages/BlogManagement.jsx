@@ -7,6 +7,7 @@ function BlogManagement() {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
   const [showForm, setShowForm] = useState(false)
+  const [photo, setPhoto] = useState(null)
   const [editingPost, setEditingPost] = useState(null)
   const [formData, setFormData] = useState({
     title: '',
@@ -45,10 +46,19 @@ function BlogManagement() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      const data = new FormData()
+      data.append('title', formData.title)
+      data.append('content', formData.content)
+      data.append('location', formData.location)
+      data.append('date', formData.date)
+      data.append('published', formData.published)
+      if (photo) {
+        data.append('photo', photo)
+      }
       if (editingPost) {
-        await updatePost(editingPost._id, formData)
+        await updatePost(editingPost._id, data)
       } else {
-        await createPost(formData)
+        await createPost(data)
       }
       fetchPosts()
       resetForm()
@@ -56,7 +66,6 @@ function BlogManagement() {
       console.log('Error saving post:', error)
     }
   }
-
   const handleEdit = (post) => {
     setEditingPost(post)
     setFormData({
@@ -84,6 +93,7 @@ function BlogManagement() {
   const resetForm = () => {
     setShowForm(false)
     setEditingPost(null)
+    setPhoto(null)
     setFormData({
       title: '',
       content: '',
@@ -186,14 +196,20 @@ function BlogManagement() {
               </div>
 
               <div className="form-group">
-                <label>Photo URL (optional)</label>
+                <label>Photo (optional)</label>
                 <input
-                  type="text"
-                  name="photoUrl"
-                  value={formData.photoUrl}
-                  onChange={handleChange}
-                  placeholder="https://link-to-photo.jpg"
+                  type="file"
+                  name="photo"
+                  accept="image/*"
+                  onChange={(e) => setPhoto(e.target.files[0])}
                 />
+                {editingPost && editingPost.photoUrl && (
+                  <img
+                    src={editingPost.photoUrl}
+                    alt="Current photo"
+                    style={{ width: '100%', borderRadius: '8px', marginTop: '10px' }}
+                  />
+                )}
               </div>
 
               <div className="form-group">
