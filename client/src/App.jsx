@@ -1,3 +1,4 @@
+import StoryDetail from './pages/StoryDetail'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -15,6 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/stories/:id" element={<><Navbar /><StoryDetail /><Footer /></>} />
         <Route path="/" element={<><Navbar /><Home /><Footer /></>} />
         <Route path="/about" element={<><Navbar /><About /><Footer /></>} />
         <Route path="/stories" element={<><Navbar /><Stories /><Footer /></>} />
