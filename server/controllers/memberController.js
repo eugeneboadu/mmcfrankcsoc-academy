@@ -71,4 +71,16 @@ const updateMemberStatus = async (req, res) => {
   }
 }
 
-module.exports = { registerMember, getAllMembers, updateMemberStatus }
+const deleteMember = async (req, res) => {
+  try {
+    const member = await Member.findByIdAndDelete(req.params.id)
+    if (!member) {
+      return res.status(404).json({ message: 'Member not found' })
+    }
+    res.status(200).json({ message: 'Member deleted successfully' })
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error: error.message })
+  }
+}
+
+module.exports = { registerMember, getAllMembers, updateMemberStatus, deleteMember }

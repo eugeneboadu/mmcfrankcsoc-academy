@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { getAllMembers, updateMemberStatus } from '../api'
+import { getAllMembers, updateMemberStatus, deleteMember } from '../api'
 import './Members.css'
 
 function Members() {
@@ -26,6 +26,18 @@ function Members() {
       console.log('Error fetching members:', error)
     } finally {
       setLoading(false)
+    }
+  }
+
+  const handleDelete = async (id) => {
+    if (window.confirm('Are you sure you want to delete this member?')) {
+      try {
+        await deleteMember(id)
+        fetchMembers()
+        setSelectedMember(null)
+      } catch (error) {
+        console.log('Error deleting member:', error)
+      }
     }
   }
 
@@ -171,6 +183,12 @@ function Members() {
                             </button>
                           </>
                         )}
+                        <button
+                          className="delete-btn"
+                          onClick={() => handleDelete(member._id)}
+                        >
+                          Delete
+                        </button>
                       </div>
                     </td>
                   </tr>

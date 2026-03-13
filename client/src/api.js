@@ -15,6 +15,7 @@ API.interceptors.request.use((req) => {
 export const registerMember = (formData) => API.post('/members/register', formData)
 export const getAllMembers = (status) => API.get(`/members${status ? `?status=${status}` : ''}`)
 export const updateMemberStatus = (id, status) => API.put(`/members/${id}/status`, { status })
+export const deleteMember = (id) => API.delete(`/members/${id}`)
 
 export const loginAdmin = (credentials) => API.post('/auth/login', credentials)
 export const getAdminProfile = () => API.get('/auth/profile')

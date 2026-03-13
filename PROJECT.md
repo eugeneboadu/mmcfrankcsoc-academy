@@ -155,6 +155,14 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Updated Stories page to display real photos
 - [x] Added Cloudinary credentials to Render
 
+### Phase 9 - Story Detail Page ✅ COMPLETE
+- [x] Built individual story detail page
+- [x] Shows full story content
+- [x] Displays photo as hero image
+- [x] Back to stories navigation
+- [x] Join CTA at bottom
+- [x] Mobile responsive
+
 ## Live URLs
 - Frontend: https://mmcfrankcsoc-academy.vercel.app
 - Backend: https://mmcfrankcsoc-academy.onrender.com

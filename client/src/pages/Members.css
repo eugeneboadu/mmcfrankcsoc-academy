@@ -235,3 +235,18 @@
   gap: 10px;
   justify-content: flex-end;
 }
+
+.delete-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-family: var(--font-main);
+  transition: all 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #ff0000;
+  color: var(--white);
+}
