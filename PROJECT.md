@@ -163,6 +163,12 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Join CTA at bottom
 - [x] Mobile responsive
 
+### Phase 10 - Member Delete ✅ COMPLETE
+- [x] Added delete button to member table
+- [x] Added delete API route on backend
+- [x] Added delete controller function
+- [x] Admins can now permanently delete members
+
 ## Live URLs
 - Frontend: https://mmcfrankcsoc-academy.vercel.app
 - Backend: https://mmcfrankcsoc-academy.onrender.com
