@@ -1,4 +1,5 @@
 const Member = require('../models/Member')
+const { sendApplicationConfirmation, sendApprovalEmail, sendRejectionEmail } = require('../utils/emailService')
 
 const registerMember = async (req, res) => {
   try {
@@ -10,6 +11,12 @@ const registerMember = async (req, res) => {
     }
 
     const member = await Member.create(req.body)
+
+    try {
+      await sendApplicationConfirmation(member.email, member.fullName)
+    } catch (emailError) {
+      console.log('Email sending failed:', emailError.message)
+    }
 
     res.status(201).json({
       message: 'Application submitted successfully',
@@ -46,6 +53,16 @@ const updateMemberStatus = async (req, res) => {
 
     if (!member) {
       return res.status(404).json({ message: 'Member not found' })
+    }
+
+    try {
+      if (status === 'approved') {
+        await sendApprovalEmail(member.email, member.fullName)
+      } else if (status === 'rejected') {
+        await sendRejectionEmail(member.email, member.fullName)
+      }
+    } catch (emailError) {
+      console.log('Email sending failed:', emailError.message)
     }
 
     res.status(200).json({ message: `Member ${status} successfully`, member })
