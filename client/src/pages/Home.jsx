@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
+import CounterCard from '../components/CounterCard'
 
 function Home() {
   return (
@@ -36,22 +37,10 @@ function Home() {
       <section className="impact">
         <div className="container">
           <div className="impact-grid">
-            <div className="impact-card">
-              <h2>3</h2>
-              <p>School Visited</p>
-            </div>
-            <div className="impact-card">
-              <h2>100+</h2>
-              <p>Children Reached</p>
-            </div>
-            <div className="impact-card">
-              <h2>Growing</h2>
-              <p>Member Community</p>
-            </div>
-            <div className="impact-card">
-              <h2>2025</h2>
-              <p>Year Founded</p>
-            </div>
+            <CounterCard target={3} label="Schools Visited" />
+            <CounterCard target={100} label="Children Reached" suffix="+" />
+            <CounterCard target="Growing" label="Member Community" />
+            <CounterCard target={2025} label="Year Founded" />
           </div>
         </div>
       </section>
