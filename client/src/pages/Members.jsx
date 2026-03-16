@@ -76,6 +76,9 @@ function Members() {
           <Link to="/dashboard/blog" className="sidebar-link">
             📝 Blog Posts
           </Link>
+          <Link to="/dashboard/gallery" className="sidebar-link">
+            🖼️ Gallery
+          </Link>
         </nav>
         <div className="sidebar-footer">
           <p className="admin-name">👤 {JSON.parse(localStorage.getItem('adminInfo'))?.name}</p>

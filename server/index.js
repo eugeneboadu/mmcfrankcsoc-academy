@@ -18,10 +18,12 @@ app.use(express.json())
 const memberRoutes = require('./routes/memberRoutes')
 const authRoutes = require('./routes/authRoutes')
 const postRoutes = require('./routes/postRoutes')
+const galleryRoutes = require('./routes/galleryRoutes')
 
 app.use('/api/members', memberRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/posts', postRoutes)
+app.use('/api/gallery', galleryRoutes)
 
 // Test route
 app.get('/', (req, res) => {

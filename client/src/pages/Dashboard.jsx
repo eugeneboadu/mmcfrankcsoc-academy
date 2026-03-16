@@ -70,6 +70,9 @@ function Dashboard() {
           <Link to="/dashboard/blog" className="sidebar-link">
             📝 Blog Posts
           </Link>
+          <Link to="/dashboard/gallery" className="sidebar-link">
+            🖼️ Gallery
+          </Link>
         </nav>
 
         <div className="sidebar-footer">
@@ -84,7 +87,7 @@ function Dashboard() {
       <main className="dashboard-main">
         <div className="dashboard-header">
           <h1>Dashboard</h1>
-          <p>Welcome back, {admin?.name}</p>
+          <p>Welcome back</p>
         </div>
 
         {loading ? (

@@ -18,6 +18,7 @@ function Navbar() {
           <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
           <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
           <li><Link to="/stories" onClick={() => setMenuOpen(false)}>Field Stories</Link></li>
+          <li><Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link></li>
           <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
           <li>
             <Link to="/join" className="nav-cta" onClick={() => setMenuOpen(false)}>

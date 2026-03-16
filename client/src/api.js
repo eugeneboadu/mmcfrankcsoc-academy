@@ -30,4 +30,10 @@ export const updatePost = (id, formData) => API.put(`/posts/${id}`, formData, {
 })
 export const deletePost = (id) => API.delete(`/posts/${id}`)
 
+export const getGallery = () => API.get('/gallery')
+export const uploadPhoto = (formData) => API.post('/gallery', formData, {
+  headers: { 'Content-Type': 'multipart/form-data' }
+})
+export const deletePhoto = (id) => API.delete(`/gallery/${id}`)
+
 export default API

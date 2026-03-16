@@ -11,6 +11,8 @@ import AdminLogin from './pages/AdminLogin'
 import Dashboard from './pages/Dashboard'
 import Members from './pages/Members'
 import BlogManagement from './pages/BlogManagement'
+import Gallery from './pages/Gallery'
+import GalleryManagement from './pages/GalleryManagement'
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard/members" element={<Members />} />
         <Route path="/dashboard/blog" element={<BlogManagement />} />
+        <Route path="/gallery" element={<><Navbar /><Gallery /><Footer /></>} />
+        <Route path="/dashboard/gallery" element={<GalleryManagement />} />
       </Routes>
     </BrowserRouter>
   )
