@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom'
 import './About.css'
+import SEO from '../components/SEO'
 
 function About() {
   return (
     <main className="about">
+      <SEO
+        title="About Us"
+        description="Learn about MmcfraNkcsoc Academy — a Ghana-based NGO founded by young people passionate about AI education in rural communities."
+      />
 
       {/* PAGE HERO */}
       <section className="about-hero">

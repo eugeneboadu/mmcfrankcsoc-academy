@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Contact.css'
+import SEO from '../components/SEO'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -43,6 +44,10 @@ function Contact() {
 
   return (
     <main className="contact">
+      <SEO
+      title="Contact Us"
+      description="Get in touch with MmcfraNkcsoc Academy. We would love to hear from you."
+    />
 
       {/* PAGE HERO */}
       <section className="contact-hero">

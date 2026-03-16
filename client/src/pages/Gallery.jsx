@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getGallery } from '../api'
 import './Gallery.css'
+import SEO from '../components/SEO'
 
 function Gallery() {
   const [photos, setPhotos] = useState([])
@@ -29,6 +30,10 @@ function Gallery() {
 
   return (
     <main className="gallery">
+      <SEO
+      title="Gallery"
+      description="Photos from MmcfraNkcsoc Academy school visits and community activities across rural Ghana."
+    />
 
       {/* HERO */}
       <section className="gallery-hero">

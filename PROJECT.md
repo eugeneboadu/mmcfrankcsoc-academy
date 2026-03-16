@@ -169,6 +169,15 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Added delete controller function
 - [x] Admins can now permanently delete members
 
+### Phase 11 - Gallery ✅ COMPLETE
+- [x] Created Gallery model in backend
+- [x] Created gallery routes and controller
+- [x] Built public Gallery page with filters
+- [x] Built lightbox for fullscreen photo viewing
+- [x] Built admin Gallery Management page
+- [x] Added Gallery to Navbar
+- [x] Added Gallery to admin sidebar
+
 ## Live URLs
 - Frontend: https://mmcfrankcsoc-academy.vercel.app
 - Backend: https://mmcfrankcsoc-academy.onrender.com
@@ -177,4 +186,6 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 ## Admin Credentials
 - Email: eugene@mmcfrankcsoc.org
 - Password: Mmcadmin2024
+- admin3@mmcfrankcsoc.org
+- admin2@mmcfrankcsoc.org
 ---

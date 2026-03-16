@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getPublishedPosts } from '../api'
 import './Stories.css'
+import SEO from '../components/SEO'
 
 function Stories() {
   const [posts, setPosts] = useState([])
@@ -23,6 +24,10 @@ function Stories() {
 
   return (
     <main className="stories">
+      <SEO
+        title="Field Stories"
+        description="Read real stories from MmcfraNkcsoc Academy school visits across rural Ghana. AI and technology education in action."
+      />
 
       <section className="stories-hero">
         <div className="container">

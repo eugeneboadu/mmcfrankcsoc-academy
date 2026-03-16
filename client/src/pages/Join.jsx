@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { registerMember } from '../api'
 import './Join.css'
+import SEO from '../components/SEO'
 
 function Join() {
   const [formData, setFormData] = useState({
@@ -81,6 +82,10 @@ function Join() {
 
   return (
     <main className="join">
+      <SEO
+        title="Join Us"
+        description="Join MmcfraNkcsoc Academy and help bring AI and technology education to children in rural Ghana. Apply for membership today."
+      />
 
       {/* PAGE HERO */}
       <section className="join-hero">

@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
 import CounterCard from '../components/CounterCard'
+import SEO from '../components/SEO'
 
 function Home() {
   return (
     <main className="home">
+      <SEO
+        title="Home"
+        description="MmcfraNkcsoc Academy brings AI and technology education to children in rural Ghana. Join our mission today."
+      />
 
       {/* HERO SECTION */}
       <section className="hero">
