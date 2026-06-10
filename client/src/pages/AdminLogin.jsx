@@ -1,39 +1,43 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { loginAdmin } from '../api'
-import './AdminLogin.css'
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { loginAdmin } from "../api";
+import "./AdminLogin.css";
 
 function AdminLogin() {
-  const [formData, setFormData] = useState({ email: '', password: '' })
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setError('')
+    e.preventDefault();
+    setLoading(true);
+    setError("");
     try {
-      const { data } = await loginAdmin(formData)
-      localStorage.setItem('adminToken', data.token)
-      localStorage.setItem('adminInfo', JSON.stringify(data.admin))
-      navigate('/dashboard')
+      const { data } = await loginAdmin(formData);
+      localStorage.setItem("adminToken", data.token);
+      localStorage.setItem("adminInfo", JSON.stringify(data.admin));
+      navigate("/dashboard");
     } catch (error) {
-      setError(error.response?.data?.message || 'Invalid email or password')
+      setError(error.response?.data?.message || "Invalid email or password");
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <main className="admin-login">
       <div className="admin-login-card">
         <div className="admin-login-header">
-          <span className="admin-symbol">⊕</span>
+          <img
+            src="/logo.png"
+            alt="MmcfraNkcsoc Academy Logo"
+            className="admin-logo-img"
+          />
           <h2>Admin Login</h2>
           <p>MmcfraNkcsoc Academy</p>
         </div>
@@ -66,7 +70,7 @@ function AdminLogin() {
           {error && <p className="login-error">{error}</p>}
 
           <button type="submit" className="login-btn" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login ⊕'}
+            {loading ? "Logging in..." : "Login ⊕"}
           </button>
         </form>
 
@@ -75,7 +79,7 @@ function AdminLogin() {
         </p>
       </div>
     </main>
-  )
+  );
 }
 
-export default AdminLogin
+export default AdminLogin;
