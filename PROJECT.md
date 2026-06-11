@@ -1,16 +1,19 @@
 # MmcfraNkcsoc Academy - Project Brief
 
 ## What This Project Is
-A full-stack web platform for MmcfraNkcsoc Academy, an NGO that teaches AI and IT 
+
+A full-stack web platform for MmcfraNkcsoc Academy, an NGO that teaches AI and IT
 to children in rural and less-endowed communities in Ghana.
 
 ## How To Continue In A New Chat
+
 Paste the contents of this file and say:
 "I am building this project, please continue from where we left off"
 
 ---
 
 ## Tech Stack
+
 - Frontend: React + Vite
 - Backend: Node.js + Express
 - Database: MongoDB Atlas (free tier)
@@ -19,17 +22,20 @@ Paste the contents of this file and say:
 - Version Control: GitHub
 
 ## GitHub Repository
+
 https://github.com/eugeneboadu/mmcfrankcsoc-academy
 
 ---
 
 ## Visual Identity
+
 - Symbol: Nyansapo (wisdom knot - represents wisdom and ingenuity)
 - Colors: Deep forest green + warm gold + cream white
 - Feeling: Warm and community-driven
 - Typography: Clean, modern, professional but warm
 
 ## Color Palette
+
 - Primary Green: #2D6A4F
 - Warm Gold: #F4A827
 - Cream White: #FDFAF5
@@ -41,6 +47,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 ## Database Collections
 
 ### Members Collection
+
 - fullName, age, gender, email, phone
 - region, occupation, skills[]
 - whyJoining, heardFrom
@@ -48,11 +55,13 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - appliedAt, reviewedAt, reviewedBy
 
 ### Posts Collection
+
 - title, content, location, date
 - photoUrl, author, published (bool)
 - createdAt, updatedAt
 
 ### Admins Collection
+
 - name, email, passwordHash, role, createdAt
 
 ---
@@ -60,6 +69,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 ## Pages To Build
 
 ### Public Pages
+
 - Home Page
 - About Page
 - Field Stories / Blog Page
@@ -67,6 +77,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - Contact Page
 
 ### Admin Panel (protected)
+
 - Admin Login Page
 - Dashboard Home
 - Member Management (approve/reject)
@@ -78,6 +89,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 ## Development Phases
 
 ### Phase 1 - Project Setup ✅ COMPLETE
+
 - Created project folder structure (client + server)
 - Initialized React + Vite frontend
 - Initialized Node.js + Express backend
@@ -87,6 +99,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - Pushed to GitHub
 
 ### Phase 2 - Frontend Public Pages ✅ COMPLETE
+
 - [x] Cleaned up default Vite files
 - [x] Installed React Router
 - [x] Created src/pages, src/components, src/styles folders
@@ -100,6 +113,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Built Contact page
 
 ### Phase 3 - Backend API ✅ COMPLETE
+
 - [x] Set up Express server in index.js
 - [x] Connected to MongoDB Atlas (pending network test)
 - [x] Built Member model
@@ -115,6 +129,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Created admin seed script
 
 ### Phase 4 - Connect Frontend to Backend ✅ COMPLETE
+
 - [x] Installed axios
 - [x] Created src/api.js with all API functions
 - [x] Connected Join Us form to backend
@@ -122,6 +137,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Added loading and error states to forms
 
 ### Phase 5 - Admin Dashboard ✅ COMPLETE
+
 - [x] Built Admin Login page
 - [x] Built Dashboard Home with stats
 - [x] Built Member Management page
@@ -129,6 +145,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Connected all dashboard routes in App.jsx
 
 ### Phase 6 - Deployment ✅ COMPLETE
+
 - [x] Added start script for deployment
 - [x] Deployed backend to Render
 - [x] Connected MongoDB Atlas on Render
@@ -139,6 +156,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Fixed mobile responsiveness
 
 ### Phase 7 - Email Notifications ✅ COMPLETE
+
 - [x] Installed Resend email service
 - [x] Created email templates (confirmation, approval, rejection)
 - [x] Members receive confirmation email on registration
@@ -147,6 +165,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Added RESEND_API_KEY to Render environment
 
 ### Phase 8 - Photo Upload ✅ COMPLETE
+
 - [x] Installed Cloudinary and Multer
 - [x] Created Cloudinary configuration
 - [x] Updated post routes to handle photo uploads
@@ -156,6 +175,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Added Cloudinary credentials to Render
 
 ### Phase 9 - Story Detail Page ✅ COMPLETE
+
 - [x] Built individual story detail page
 - [x] Shows full story content
 - [x] Displays photo as hero image
@@ -164,12 +184,14 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Mobile responsive
 
 ### Phase 10 - Member Delete ✅ COMPLETE
+
 - [x] Added delete button to member table
 - [x] Added delete API route on backend
 - [x] Added delete controller function
 - [x] Admins can now permanently delete members
 
 ### Phase 11 - Gallery ✅ COMPLETE
+
 - [x] Created Gallery model in backend
 - [x] Created gallery routes and controller
 - [x] Built public Gallery page with filters
@@ -179,6 +201,7 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Added Gallery to admin sidebar
 
 ### Phase 12 - SEO & Meta Tags ✅ COMPLETE
+
 - [x] Installed react-helmet-async
 - [x] Created reusable SEO component
 - [x] Added SEO to all public pages
@@ -188,13 +211,16 @@ https://github.com/eugeneboadu/mmcfrankcsoc-academy
 - [x] Added keywords: AI education Ghana, technology NGO Ghana
 
 ## Live URLs
+
 - Frontend: https://mmcfrankcsoc-academy.vercel.app
 - Backend: https://mmcfrankcsoc-academy.onrender.com
 - Admin Panel: https://mmcfrankcsoc-academy.vercel.app/admin
 
 ## Admin Credentials
+
 - Email: eugene@mmcfrankcsoc.org
 - Password: Mmcadmin2024
 - admin3@mmcfrankcsoc.org
 - admin2@mmcfrankcsoc.org
+
 ---

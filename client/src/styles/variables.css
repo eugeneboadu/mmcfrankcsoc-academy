@@ -1,19 +1,26 @@
 :root {
-  /* Colors */
-  --primary-green: #2D6A4F;
-  --primary-green-light: #40916C;
-  --primary-green-dark: #1B4332;
-  --warm-gold: #F4A827;
-  --warm-gold-light: #F9C74F;
-  --cream-white: #FDFAF5;
-  --cream-dark: #F0EBE3;
+  /* New Color Palette */
+  --primary-blue: #0431ad;
+  --primary-blue-light: #0547d4;
+  --primary-blue-dark: #0225824;
+  --yellow-gold: #eab308;
+  --yellow-gold-light: #facc15;
+  --cream-white: #f8fafc;
+  --cream-dark: #f0f4f8;
   --dark-text: #1a1a1a;
   --gray-text: #555555;
   --light-gray: #e0e0e0;
   --white: #ffffff;
 
+  /* Keep old names as aliases so existing code doesn't break */
+  --primary-green: #0431ad;
+  --primary-green-light: #0547d4;
+  --primary-green-dark: #022582;
+  --warm-gold: #eab308;
+  --warm-gold-light: #facc15;
+
   /* Typography */
-  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   /* Spacing */
   --section-padding: 80px 20px;
@@ -25,6 +32,6 @@
   --radius-lg: 24px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
 }

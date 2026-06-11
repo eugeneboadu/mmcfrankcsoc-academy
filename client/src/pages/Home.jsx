@@ -1,7 +1,23 @@
-import { Link } from 'react-router-dom'
-import './Home.css'
-import CounterCard from '../components/CounterCard'
-import SEO from '../components/SEO'
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import CounterCard from "../components/CounterCard";
+import SEO from "../components/SEO";
+import "./Home.css";
+
+const slides = [
+  "https://res.cloudinary.com/djw6sbckx/image/upload/v1773627521/mmcfrankcsoc-academy/fz5frrog6u7vhxl0scx8.jpg",
+  "https://res.cloudinary.com/djw6sbckx/image/upload/v1781131314/mmcfrankcsoc-academy/odpmsatiuovleldqw97f.jpg",
+  "https://res.cloudinary.com/djw6sbckx/image/upload/v1781131275/mmcfrankcsoc-academy/hyqetrej9nqyqlwtj9by.jpg",
+  "https://res.cloudinary.com/djw6sbckx/image/upload/v1781131134/mmcfrankcsoc-academy/ckc2gckxtlmvrqqlumpc.jpg",
+  "https://res.cloudinary.com/djw6sbckx/image/upload/v1781097009/mmcfrankcsoc-academy/j4dvekyrn0qypsrjbu9b.jpg",
+  "https://res.cloudinary.com/djw6sbckx/image/upload/v1781096963/mmcfrankcsoc-academy/jr0lsspqr08zxpf9dec5.jpg",
+  "https://res.cloudinary.com/djw6sbckx/image/upload/v1781096767/mmcfrankcsoc-academy/flrd8vibtnc2jbbszjlz.jpg",
+  "https://res.cloudinary.com/djw6sbckx/image/upload/v1781096450/mmcfrankcsoc-academy/mcdotzarshyz0shevu95.jpg",
+];
 
 function Home() {
   return (
@@ -13,32 +29,61 @@ function Home() {
 
       {/* HERO SECTION */}
       <section className="hero">
-        <div className="hero-content">
-          <div className="hero-symbol">⊕</div>
-          <h1>Empowering Rural Communities Through <span>AI & Technology</span></h1>
-          <p>
-            MmcfraNkcsoc Academy brings hands-on AI and IT education to children 
-            in less-endowed communities across Ghana. We believe every child 
-            deserves access to the tools of the future.
-          </p>
-          <div className="hero-buttons">
-            <Link to="/join" className="btn-primary">Join Our Mission</Link>
-            <Link to="/about" className="btn-secondary">Learn More</Link>
-          </div>
+        {/* SLIDESHOW */}
+        <div className="hero-slideshow">
+          <Swiper
+            modules={[Autoplay, EffectFade]}
+            effect="fade"
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            loop={true}
+            className="hero-swiper"
+          >
+            {slides.map((slide, index) => (
+              <SwiperSlide key={index}>
+                <div
+                  className="hero-slide"
+                  style={{ backgroundImage: `url(${slide})` }}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-        <div className="hero-visual">
-          <div className="hero-card">
-            <span className="hero-card-symbol">⊕</span>
-            <p className="hero-card-text">Nyansapo</p>
-            <p className="hero-card-sub">Wisdom Knot</p>
-            <p className="hero-card-meaning">
-              "It takes wisdom, ingenuity, and patience to conquer a difficult task"
+
+        {/* OVERLAY PANEL */}
+        <div className="hero-overlay-panel">
+          <div className="hero-panel-content">
+            <span className="hero-label">AI & Technology Education</span>
+            <h1>
+              Empowering Rural Communities Through <span>Technology</span>
+            </h1>
+            <p>
+              MmcfraNkcsoc Academy brings hands-on AI and IT education to
+              children in less-endowed communities across Ghana. Every child
+              deserves access to the tools of the future.
             </p>
+            <div className="hero-buttons">
+              <Link to="/join" className="btn-primary">
+                Join Our Mission
+              </Link>
+              <Link to="/about" className="btn-outline-white">
+                Learn More
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* IMPACT NUMBERS */}
+      {/* KENTE DIVIDER */}
+      <div className="kente-divider-wrapper">
+        <div className="kente-divider">
+          <div className="kente-wave-1" />
+          <div className="kente-wave-2" />
+          <div className="kente-wave-3" />
+        </div>
+      </div>
+      {/* IMPACT STATS */}
+
+      {/* IMPACT STATS */}
       <section className="impact">
         <div className="container">
           <div className="impact-grid">
@@ -50,51 +95,17 @@ function Home() {
         </div>
       </section>
 
-      {/* WHO WE ARE */}
-      <section className="who-we-are">
+      {/* MISSION SECTION */}
+      <section className="mission-section">
         <div className="container">
-          <div className="who-grid">
-            <div className="who-text">
-              <span className="section-label">Who We Are</span>
-              <h2>Young People Creating Real Change</h2>
-              <p>
-                MmcfraNkcsoc Academy was founded by a group of passionate young 
-                people who believe that geography should never determine a child's 
-                access to quality technology education.
-              </p>
-              <p>
-                We travel to rural and less-endowed schools across Ghana, bringing 
-                practical AI and IT lessons that open minds and create possibilities. 
-                Our volunteers are students, developers, and educators united by one goal.
-              </p>
-              <Link to="/about" className="btn-primary">Our Full Story</Link>
-            </div>
-            <div className="who-visual">
-              <div className="who-card">
-                <div className="who-card-item">
-                  <span>🎯</span>
-                  <div>
-                    <h4>Our Mission</h4>
-                    <p>Bring AI and IT education to every rural child in Ghana</p>
-                  </div>
-                </div>
-                <div className="who-card-item">
-                  <span>👁️</span>
-                  <div>
-                    <h4>Our Vision</h4>
-                    <p>A Ghana where no child is left behind in the digital age</p>
-                  </div>
-                </div>
-                <div className="who-card-item">
-                  <span>💛</span>
-                  <div>
-                    <h4>Our Values</h4>
-                    <p>Community, wisdom, inclusion, and hands-on learning</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <span className="section-label">Our Mission</span>
+          <h2>Bridging the Gap Between Communities and Technology</h2>
+          <p>
+            MmcfraNkcsoc Academy is dedicated to bringing AI and technology
+            education to children in rural Ghana while fostering community
+            growth and digital inclusion. We believe that education is most
+            effective when it reaches those who need it most.
+          </p>
         </div>
       </section>
 
@@ -105,53 +116,89 @@ function Home() {
           <h2>How We Make An Impact</h2>
           <div className="what-grid">
             <div className="what-card">
-              <span className="what-icon">🤖</span>
-              <h3>AI Education</h3>
-              <p>We introduce children to artificial intelligence concepts in simple, 
-              engaging ways that spark curiosity and critical thinking.</p>
+              <div
+                className="what-card-image"
+                style={{ backgroundImage: `url(${slides[0]})` }}
+              />
+              <div className="what-card-body">
+                <span className="what-tag">AI Education</span>
+                <h3>AI Education</h3>
+                <p>
+                  We introduce children to artificial intelligence concepts in
+                  simple, engaging ways that spark curiosity and critical
+                  thinking.
+                </p>
+              </div>
             </div>
             <div className="what-card">
-              <span className="what-icon">💻</span>
-              <h3>IT Skills</h3>
-              <p>From basic computer literacy to coding fundamentals, we equip 
-              students with practical digital skills for the modern world.</p>
+              <div
+                className="what-card-image"
+                style={{ backgroundImage: `url(${slides[1]})` }}
+              />
+              <div className="what-card-body">
+                <span className="what-tag">IT Skills</span>
+                <h3>IT Skills</h3>
+                <p>
+                  From basic computer literacy to coding fundamentals, we equip
+                  students with practical digital skills for the modern world.
+                </p>
+              </div>
             </div>
             <div className="what-card">
-              <span className="what-icon">🏫</span>
-              <h3>School Visits</h3>
-              <p>We go directly to rural and less-endowed schools, removing 
-              barriers and bringing education to where it's needed most.</p>
+              <div
+                className="what-card-image"
+                style={{ backgroundImage: `url(${slides[2]})` }}
+              />
+              <div className="what-card-body">
+                <span className="what-tag">School Visits</span>
+                <h3>School Visits</h3>
+                <p>
+                  We go directly to rural and less-endowed schools, removing
+                  barriers and bringing education to where it is needed most.
+                </p>
+              </div>
             </div>
             <div className="what-card">
-              <span className="what-icon">🤝</span>
-              <h3>Community Building</h3>
-              <p>We build a network of passionate volunteers and educators 
-              committed to bridging the digital divide in Ghana.</p>
+              <div
+                className="what-card-image"
+                style={{ backgroundImage: `url(${slides[3]})` }}
+              />
+              <div className="what-card-body">
+                <span className="what-tag">Community</span>
+                <h3>Community Building</h3>
+                <p>
+                  We build a network of passionate volunteers and educators
+                  committed to bridging the digital divide in Ghana.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CALL TO ACTION */}
+      {/* CTA SECTION */}
       <section className="cta-section">
         <div className="container">
           <div className="cta-box">
-            <span className="cta-symbol">⊕</span>
-            <h2>Ready To Make A Difference?</h2>
+            <span className="section-label-light">Get Involved</span>
+            <h2>Join Us In Shaping The Future</h2>
             <p>
-              Join MmcfraNkcsoc Academy and help us bring the gift of technology 
-              education to children who need it most. Every skill you have matters.
+              Whether you want to volunteer, partner with us, or simply spread
+              the word — there is a place for you in our mission.
             </p>
             <div className="cta-buttons">
-              <Link to="/join" className="btn-primary">Become A Member</Link>
-              <Link to="/stories" className="btn-outline">Read Field Stories</Link>
+              <Link to="/join" className="btn-primary">
+                Become A Member
+              </Link>
+              <Link to="/about" className="btn-outline-white">
+                Learn More
+              </Link>
             </div>
           </div>
         </div>
       </section>
-
     </main>
-  )
+  );
 }
 
-export default Home
+export default Home;
