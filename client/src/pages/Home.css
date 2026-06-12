@@ -14,6 +14,8 @@
   line-height: 0;
   position: relative;
   height: 150px;
+  margin-top: -80px;
+  z-index: 3;
 }
 
 .kente-divider {
@@ -61,7 +63,7 @@
     100% 100%,
     0% 100%
   );
-  animation: waveMove1 6s linear infinite;
+  animation: waveMove1 10s linear infinite;
   opacity: 1;
   z-index: 3;
 }
@@ -92,7 +94,7 @@
     100% 100%,
     0% 100%
   );
-  animation: waveMove2 8s linear infinite;
+  animation: waveMove2 10s linear infinite;
   opacity: 0.7;
   z-index: 2;
 }
