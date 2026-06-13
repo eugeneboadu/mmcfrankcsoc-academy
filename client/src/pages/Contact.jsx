@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import './Contact.css'
-import SEO from '../components/SEO'
+import { useState } from "react";
+import "./Contact.css";
+import SEO from "../components/SEO";
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Contact form submitted:', formData)
-    setSubmitted(true)
-  }
+    e.preventDefault();
+    console.log("Contact form submitted:", formData);
+    setSubmitted(true);
+  };
 
   if (submitted) {
     return (
@@ -31,33 +31,45 @@ function Contact() {
               <span className="success-symbol">⊕</span>
               <h2>Message Sent!</h2>
               <p>
-                Thank you for reaching out to MmcfraNkcsoc Academy. 
-                We will get back to you as soon as possible.
+                Thank you for reaching out to MmcfraNkcsoc Academy. We will get
+                back to you as soon as possible.
               </p>
-              <a href="/" className="btn-primary">Back To Home</a>
+              <a href="/" className="btn-primary">
+                Back To Home
+              </a>
             </div>
           </div>
         </section>
       </main>
-    )
+    );
   }
 
   return (
     <main className="contact">
       <SEO
-      title="Contact Us"
-      description="Get in touch with MmcfraNkcsoc Academy. We would love to hear from you."
-    />
+        title="Contact Us"
+        description="Get in touch with MmcfraNkcsoc Academy. We would love to hear from you."
+      />
 
       {/* PAGE HERO */}
-      <section className="contact-hero">
-        <div className="container">
-          <span className="section-label">Contact Us</span>
-          <h1>Let's <span>Talk</span></h1>
-          <p>
-            Have a question, suggestion, or want to partner with us? 
-            We would love to hear from you.
-          </p>
+      <section
+        className="contact-hero"
+        style={{
+          backgroundImage:
+            "url(https://res.cloudinary.com/djw6sbckx/image/upload/v1781096450/mmcfrankcsoc-academy/mcdotzarshyz0shevu95.jpg)",
+        }}
+      >
+        <div className="contact-hero-overlay">
+          <div className="container">
+            <span className="section-label-light">Contact Us</span>
+            <h1>
+              Let's <span>Talk</span>
+            </h1>
+            <p>
+              Have a question, suggestion, or want to partner with us? We would
+              love to hear from you.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -65,7 +77,6 @@ function Contact() {
       <section className="contact-section">
         <div className="container">
           <div className="contact-layout">
-
             {/* CONTACT INFO */}
             <div className="contact-info">
               <h3>Get In Touch</h3>
@@ -98,17 +109,27 @@ function Contact() {
                 <span>⊕</span>
                 <div>
                   <h4>Our Symbol</h4>
-                  <p>Nyansapo — Wisdom Knot. We lead with wisdom in everything.</p>
+                  <p>
+                    Nyansapo — Wisdom Knot. We lead with wisdom in everything.
+                  </p>
                 </div>
               </div>
 
               <div className="social-links">
                 <h4>Follow Our Journey</h4>
                 <div className="social-grid">
-                  <a href="#" className="social-btn">Twitter / X</a>
-                  <a href="#" className="social-btn">Instagram</a>
-                  <a href="#" className="social-btn">LinkedIn</a>
-                  <a href="#" className="social-btn">Facebook</a>
+                  <a href="#" className="social-btn">
+                    Twitter / X
+                  </a>
+                  <a href="#" className="social-btn">
+                    Instagram
+                  </a>
+                  <a href="#" className="social-btn">
+                    LinkedIn
+                  </a>
+                  <a href="#" className="social-btn">
+                    Facebook
+                  </a>
                 </div>
               </div>
             </div>
@@ -116,7 +137,9 @@ function Contact() {
             {/* CONTACT FORM */}
             <div className="contact-form-card">
               <h3>Send Us A Message</h3>
-              <p className="form-subtitle">We typically respond within 48 hours</p>
+              <p className="form-subtitle">
+                We typically respond within 48 hours
+              </p>
 
               <form onSubmit={handleSubmit}>
                 <div className="form-row">
@@ -173,13 +196,11 @@ function Contact() {
                 </button>
               </form>
             </div>
-
           </div>
         </div>
       </section>
-
     </main>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

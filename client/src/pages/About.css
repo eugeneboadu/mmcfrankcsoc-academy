@@ -1,26 +1,41 @@
 /* ABOUT HERO */
 .about-hero {
-  background: linear-gradient(135deg, var(--primary-green-dark) 0%, var(--primary-green) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.about-hero-overlay {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    rgba(4, 49, 173, 0.85) 0%,
+    rgba(2, 37, 130, 0.7) 100%
+  );
   padding: 100px 20px;
-  text-align: center;
-  color: var(--cream-white);
 }
 
 .about-hero h1 {
   font-size: 2.8rem;
   margin: 15px 0;
+  color: var(--white);
   line-height: 1.2;
 }
 
 .about-hero h1 span {
-  color: var(--warm-gold);
+  color: var(--yellow-gold);
 }
 
 .about-hero p {
-  color: var(--cream-dark);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.1rem;
   max-width: 600px;
-  margin: 0 auto;
   line-height: 1.8;
 }
 
@@ -49,7 +64,11 @@
 }
 
 .story-symbol-card {
-  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-green) 0%,
+    var(--primary-green-dark) 100%
+  );
   border-radius: var(--radius-lg);
   padding: 50px 40px;
   text-align: center;
@@ -195,7 +214,11 @@
 }
 
 .about-cta .cta-box {
-  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-green) 0%,
+    var(--primary-green-dark) 100%
+  );
   border-radius: var(--radius-lg);
   padding: 60px 40px;
   text-align: center;

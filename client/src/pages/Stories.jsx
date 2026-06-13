@@ -1,26 +1,26 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { getPublishedPosts } from '../api'
-import './Stories.css'
-import SEO from '../components/SEO'
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { getPublishedPosts } from "../api";
+import "./Stories.css";
+import SEO from "../components/SEO";
 
 function Stories() {
-  const [posts, setPosts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await getPublishedPosts()
-        setPosts(data)
+        const { data } = await getPublishedPosts();
+        setPosts(data);
       } catch (error) {
-        console.log('Error fetching posts:', error)
+        console.log("Error fetching posts:", error);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
-    fetchPosts()
-  }, [])
+    };
+    fetchPosts();
+  }, []);
 
   return (
     <main className="stories">
@@ -29,14 +29,24 @@ function Stories() {
         description="Read real stories from MmcfraNkcsoc Academy school visits across rural Ghana. AI and technology education in action."
       />
 
-      <section className="stories-hero">
-        <div className="container">
-          <span className="section-label">Field Stories</span>
-          <h1>From The <span>Ground</span></h1>
-          <p>
-            Real stories from real school visits. Every post here represents
-            a moment where technology education reached a child who needed it.
-          </p>
+      <section
+        className="stories-hero"
+        style={{
+          backgroundImage:
+            "url(https://res.cloudinary.com/djw6sbckx/image/upload/v1781096963/mmcfrankcsoc-academy/jr0lsspqr08zxpf9dec5.jpg)",
+        }}
+      >
+        <div className="stories-hero-overlay">
+          <div className="container">
+            <span className="section-label-light">Field Stories</span>
+            <h1>
+              From The <span>Ground</span>
+            </h1>
+            <p>
+              Real stories from real school visits. Every post here represents a
+              moment where technology education reached a child who needed it.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -51,11 +61,14 @@ function Stories() {
             <div className="no-stories">
               <span>⊕</span>
               <h2>Stories Coming Soon</h2>
-              <p>We are out in the field right now. Check back soon for updates from our school visits.</p>
+              <p>
+                We are out in the field right now. Check back soon for updates
+                from our school visits.
+              </p>
             </div>
           ) : (
             <div className="stories-grid">
-              {posts.map(post => (
+              {posts.map((post) => (
                 <div className="story-card" key={post._id}>
                   <div className="story-card-image">
                     {post.photoUrl ? (
@@ -68,16 +81,21 @@ function Stories() {
                     <div className="story-meta">
                       <span className="story-tag">{post.location}</span>
                       <span className="story-date">
-                        {new Date(post.date).toLocaleDateString('en-GB', {
-                          year: 'numeric',
-                          month: 'long'
+                        {new Date(post.date).toLocaleDateString("en-GB", {
+                          year: "numeric",
+                          month: "long",
                         })}
                       </span>
                     </div>
                     <h3>{post.title}</h3>
                     <p className="story-location">📍 {post.location}</p>
-                    <p className="story-excerpt">{post.content.substring(0, 150)}...</p>
-                    <Link to={`/stories/${post._id}`} className="story-read-more">
+                    <p className="story-excerpt">
+                      {post.content.substring(0, 150)}...
+                    </p>
+                    <Link
+                      to={`/stories/${post._id}`}
+                      className="story-read-more"
+                    >
                       Read Full Story →
                     </Link>
                   </div>
@@ -93,16 +111,20 @@ function Stories() {
           <div className="cta-box">
             <span className="cta-symbol">⊕</span>
             <h2>Want To Be Part Of The Next Story?</h2>
-            <p>Join our team and help us create more moments like these in communities across Ghana.</p>
+            <p>
+              Join our team and help us create more moments like these in
+              communities across Ghana.
+            </p>
             <div className="cta-buttons">
-              <Link to="/join" className="btn-primary">Join The Team</Link>
+              <Link to="/join" className="btn-primary">
+                Join The Team
+              </Link>
             </div>
           </div>
         </div>
       </section>
-
     </main>
-  )
+  );
 }
 
-export default Stories
+export default Stories;

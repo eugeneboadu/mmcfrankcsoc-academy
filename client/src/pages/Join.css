@@ -1,23 +1,40 @@
 /* JOIN HERO */
 .join-hero {
-  background: linear-gradient(135deg, var(--primary-green-dark) 0%, var(--primary-green) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.join-hero-overlay {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    rgba(4, 49, 173, 0.85) 0%,
+    rgba(2, 37, 130, 0.7) 100%
+  );
   padding: 100px 20px;
   text-align: center;
-  color: var(--cream-white);
 }
 
 .join-hero h1 {
   font-size: 2.8rem;
   margin: 15px 0;
+  color: var(--white);
   line-height: 1.2;
 }
 
 .join-hero h1 span {
-  color: var(--warm-gold);
+  color: var(--yellow-gold);
 }
 
 .join-hero p {
-  color: var(--cream-dark);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -176,7 +193,9 @@
   font-weight: 700;
   border-radius: var(--radius-sm);
   margin-top: 10px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
   font-family: var(--font-main);
 }
 
