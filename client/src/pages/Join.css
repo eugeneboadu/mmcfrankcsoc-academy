@@ -286,3 +286,90 @@
   margin-bottom: 10px;
   text-align: center;
 }
+
+/* STEP INDICATOR */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+  gap: 0;
+}
+
+.step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.step-dot span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  color: var(--gray-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.step-dot.active span {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.step-dot p {
+  font-size: 0.75rem;
+  color: var(--gray-text);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.step-dot.active p {
+  color: var(--primary-green);
+}
+
+.step-line {
+  width: 80px;
+  height: 3px;
+  background-color: var(--light-gray);
+  margin: 0 5px;
+  margin-bottom: 22px;
+  transition: background-color 0.3s;
+}
+
+.step-line.active {
+  background-color: var(--primary-green);
+}
+
+/* STEP CONTENT */
+.step-content h3 {
+  color: var(--primary-green-dark);
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+/* STEP BUTTONS */
+.step-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.back-btn {
+  padding: 14px 24px;
+  background-color: var(--cream-dark);
+  color: var(--gray-text);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-main);
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: var(--light-gray);
+}

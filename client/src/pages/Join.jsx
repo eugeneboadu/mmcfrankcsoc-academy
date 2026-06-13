@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { registerMember } from "../api";
-import "./Join.css";
 import SEO from "../components/SEO";
+import "./Join.css";
 
 function Join() {
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     fullName: "",
     age: "",
@@ -16,7 +17,6 @@ function Join() {
     whyJoining: "",
     heardFrom: "",
   });
-
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -42,8 +42,41 @@ function Join() {
     setFormData({ ...formData, skills: updated });
   };
 
+  const handleNext = () => {
+    if (step === 1) {
+      if (
+        !formData.fullName ||
+        !formData.age ||
+        !formData.gender ||
+        !formData.email ||
+        !formData.phone ||
+        !formData.region
+      ) {
+        setError("Please fill in all fields before continuing.");
+        return;
+      }
+    }
+    if (step === 2) {
+      if (!formData.occupation) {
+        setError("Please select your occupation before continuing.");
+        return;
+      }
+    }
+    setError("");
+    setStep(step + 1);
+  };
+
+  const handleBack = () => {
+    setError("");
+    setStep(step - 1);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.whyJoining) {
+      setError("Please tell us why you want to join.");
+      return;
+    }
     setLoading(true);
     setError("");
     try {
@@ -62,6 +95,10 @@ function Join() {
   if (submitted) {
     return (
       <main className="join">
+        <SEO
+          title="Join Us"
+          description="Join MmcfraNkcsoc Academy and help bring AI and technology education to children in rural Ghana."
+        />
         <section className="success-section">
           <div className="container">
             <div className="success-card">
@@ -90,11 +127,10 @@ function Join() {
     <main className="join">
       <SEO
         title="Join Us"
-        description="Join MmcfraNkcsoc Academy and help bring AI and technology education to children in rural Ghana. Apply for membership today."
+        description="Join MmcfraNkcsoc Academy and help bring AI and technology education to children in rural Ghana."
       />
 
       {/* PAGE HERO */}
-
       <section
         className="join-hero"
         style={{
@@ -165,160 +201,237 @@ function Join() {
               </div>
             </div>
 
-            {/* FORM */}
+            {/* MULTI STEP FORM */}
             <div className="form-card">
-              <h3>Membership Application</h3>
-              <p className="form-subtitle">All fields marked * are required</p>
+              {/* STEP INDICATOR */}
+              <div className="step-indicator">
+                <div className={`step-dot ${step >= 1 ? "active" : ""}`}>
+                  <span>1</span>
+                  <p>Personal Info</p>
+                </div>
+                <div className={`step-line ${step >= 2 ? "active" : ""}`} />
+                <div className={`step-dot ${step >= 2 ? "active" : ""}`}>
+                  <span>2</span>
+                  <p>Background</p>
+                </div>
+                <div className={`step-line ${step >= 3 ? "active" : ""}`} />
+                <div className={`step-dot ${step >= 3 ? "active" : ""}`}>
+                  <span>3</span>
+                  <p>Your Story</p>
+                </div>
+              </div>
 
-              <form onSubmit={handleSubmit}>
-                <div className="form-row">
-                  <div className="form-group">
-                    <label>Full Name *</label>
-                    <input
-                      type="text"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleChange}
-                      placeholder="Your full name"
-                      required
-                    />
+              {/* STEP 1 */}
+              {step === 1 && (
+                <div className="step-content">
+                  <h3>Personal Information</h3>
+                  <p className="form-subtitle">Tell us a bit about yourself</p>
+
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label>Full Name *</label>
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        placeholder="Your full name"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Age *</label>
+                      <input
+                        type="number"
+                        name="age"
+                        value={formData.age}
+                        onChange={handleChange}
+                        placeholder="Your age"
+                        min="16"
+                        max="60"
+                      />
+                    </div>
                   </div>
-                  <div className="form-group">
-                    <label>Age *</label>
-                    <input
-                      type="number"
-                      name="age"
-                      value={formData.age}
-                      onChange={handleChange}
-                      placeholder="Your age"
-                      min="16"
-                      max="60"
-                      required
-                    />
+
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label>Gender *</label>
+                      <select
+                        name="gender"
+                        value={formData.gender}
+                        onChange={handleChange}
+                      >
+                        <option value="">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="prefer-not-to-say">
+                          Prefer not to say
+                        </option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label>Email Address *</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label>Phone Number *</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Your phone number"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Region / Location *</label>
+                      <input
+                        type="text"
+                        name="region"
+                        value={formData.region}
+                        onChange={handleChange}
+                        placeholder="e.g. Ashanti Region"
+                      />
+                    </div>
+                  </div>
+
+                  {error && <p className="form-error">{error}</p>}
+
+                  <div className="step-buttons">
+                    <button
+                      type="button"
+                      className="submit-btn"
+                      onClick={handleNext}
+                    >
+                      Next: Background →
+                    </button>
                   </div>
                 </div>
+              )}
 
-                <div className="form-row">
+              {/* STEP 2 */}
+              {step === 2 && (
+                <div className="step-content">
+                  <h3>Your Background</h3>
+                  <p className="form-subtitle">
+                    Help us understand your skills
+                  </p>
+
                   <div className="form-group">
-                    <label>Gender *</label>
+                    <label>Occupation / Student Status *</label>
                     <select
-                      name="gender"
-                      value={formData.gender}
+                      name="occupation"
+                      value={formData.occupation}
                       onChange={handleChange}
-                      required
                     >
-                      <option value="">Select gender</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="prefer-not-to-say">
-                        Prefer not to say
-                      </option>
+                      <option value="">Select one</option>
+                      <option value="student">Student</option>
+                      <option value="employed">Employed</option>
+                      <option value="self-employed">Self Employed</option>
+                      <option value="unemployed">Unemployed</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
+
                   <div className="form-group">
-                    <label>Email Address *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
+                    <label>Skills You Can Contribute</label>
+                    <div className="skills-grid">
+                      {skillOptions.map((skill) => (
+                        <label key={skill} className="skill-checkbox">
+                          <input
+                            type="checkbox"
+                            checked={formData.skills.includes(skill)}
+                            onChange={() => handleSkillChange(skill)}
+                          />
+                          <span>{skill}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {error && <p className="form-error">{error}</p>}
+
+                  <div className="step-buttons">
+                    <button
+                      type="button"
+                      className="back-btn"
+                      onClick={handleBack}
+                    >
+                      ← Back
+                    </button>
+                    <button
+                      type="button"
+                      className="submit-btn"
+                      onClick={handleNext}
+                    >
+                      Next: Your Story →
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* STEP 3 */}
+              {step === 3 && (
+                <div className="step-content">
+                  <h3>Your Story</h3>
+                  <p className="form-subtitle">Tell us why you want to join</p>
+
+                  <div className="form-group">
+                    <label>Why Do You Want To Join? *</label>
+                    <textarea
+                      name="whyJoining"
+                      value={formData.whyJoining}
                       onChange={handleChange}
-                      placeholder="your@email.com"
-                      required
+                      placeholder="Tell us what drives you and what you hope to contribute..."
+                      rows="5"
                     />
                   </div>
-                </div>
 
-                <div className="form-row">
                   <div className="form-group">
-                    <label>Phone Number *</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
+                    <label>How Did You Hear About Us?</label>
+                    <select
+                      name="heardFrom"
+                      value={formData.heardFrom}
                       onChange={handleChange}
-                      placeholder="Your phone number"
-                      required
-                    />
+                    >
+                      <option value="">Select one</option>
+                      <option value="friend">From a Friend</option>
+                      <option value="social-media">Social Media</option>
+                      <option value="school">Through School</option>
+                      <option value="event">At an Event</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
-                  <div className="form-group">
-                    <label>Region / Location *</label>
-                    <input
-                      type="text"
-                      name="region"
-                      value={formData.region}
-                      onChange={handleChange}
-                      placeholder="e.g. Ashanti Region"
-                      required
-                    />
-                  </div>
-                </div>
 
-                <div className="form-group">
-                  <label>Occupation / Student Status *</label>
-                  <select
-                    name="occupation"
-                    value={formData.occupation}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">Select one</option>
-                    <option value="student">Student</option>
-                    <option value="employed">Employed</option>
-                    <option value="self-employed">Self Employed</option>
-                    <option value="unemployed">Unemployed</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
+                  {error && <p className="form-error">{error}</p>}
 
-                <div className="form-group">
-                  <label>Skills You Can Contribute</label>
-                  <div className="skills-grid">
-                    {skillOptions.map((skill) => (
-                      <label key={skill} className="skill-checkbox">
-                        <input
-                          type="checkbox"
-                          checked={formData.skills.includes(skill)}
-                          onChange={() => handleSkillChange(skill)}
-                        />
-                        <span>{skill}</span>
-                      </label>
-                    ))}
+                  <div className="step-buttons">
+                    <button
+                      type="button"
+                      className="back-btn"
+                      onClick={handleBack}
+                    >
+                      ← Back
+                    </button>
+                    <button
+                      type="button"
+                      className="submit-btn"
+                      onClick={handleSubmit}
+                      disabled={loading}
+                    >
+                      {loading ? "Submitting..." : "Submit Application ⊕"}
+                    </button>
                   </div>
                 </div>
-
-                <div className="form-group">
-                  <label>Why Do You Want To Join? *</label>
-                  <textarea
-                    name="whyJoining"
-                    value={formData.whyJoining}
-                    onChange={handleChange}
-                    placeholder="Tell us what drives you and what you hope to contribute..."
-                    rows="5"
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label>How Did You Hear About Us?</label>
-                  <select
-                    name="heardFrom"
-                    value={formData.heardFrom}
-                    onChange={handleChange}
-                  >
-                    <option value="">Select one</option>
-                    <option value="friend">From a Friend</option>
-                    <option value="social-media">Social Media</option>
-                    <option value="school">Through School</option>
-                    <option value="event">At an Event</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                {error && <p className="form-error">{error}</p>}
-                <button type="submit" className="submit-btn" disabled={loading}>
-                  {loading ? "Submitting..." : "Submit Application ⊕"}
-                </button>
-              </form>
+              )}
             </div>
           </div>
         </div>
