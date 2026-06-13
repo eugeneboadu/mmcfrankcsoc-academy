@@ -183,7 +183,7 @@
 .hero-overlay-panel {
   position: relative;
   z-index: 2;
-  background: rgba(4, 49, 173, 0.88);
+  background: rgba(4, 49, 173, 0.79);
   clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
   min-height: 100vh;
   width: 55%;

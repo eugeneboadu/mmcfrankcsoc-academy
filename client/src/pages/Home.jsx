@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import FadeIn from "../components/FadeIn";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
@@ -86,26 +87,30 @@ function Home() {
       {/* IMPACT STATS */}
       <section className="impact">
         <div className="container">
-          <div className="impact-grid">
-            <CounterCard target={3} label="Schools Visited" />
-            <CounterCard target={100} label="Children Reached" suffix="+" />
-            <CounterCard target="Growing" label="Member Community" />
-            <CounterCard target={2025} label="Year Founded" />
-          </div>
+          <FadeIn>
+            <div className="impact-grid">
+              <CounterCard target={3} label="Schools Visited" />
+              <CounterCard target={100} label="Children Reached" suffix="+" />
+              <CounterCard target="Growing" label="Member Community" />
+              <CounterCard target={2025} label="Year Founded" />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* MISSION SECTION */}
       <section className="mission-section">
         <div className="container">
-          <span className="section-label">Our Mission</span>
-          <h2>Bridging the Gap Between Communities and Technology</h2>
-          <p>
-            MmcfraNkcsoc Academy is dedicated to bringing AI and technology
-            education to children in rural Ghana while fostering community
-            growth and digital inclusion. We believe that education is most
-            effective when it reaches those who need it most.
-          </p>
+          <FadeIn>
+            <span className="section-label">Our Mission</span>
+            <h2>Bridging the Gap Between Communities and Technology</h2>
+            <p>
+              MmcfraNkcsoc Academy is dedicated to bringing AI and technology
+              education to children in rural Ghana while fostering community
+              growth and digital inclusion. We believe that education is most
+              effective when it reaches those who need it most.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -115,63 +120,72 @@ function Home() {
           <span className="section-label">What We Do</span>
           <h2>How We Make An Impact</h2>
           <div className="what-grid">
-            <div className="what-card">
-              <div
-                className="what-card-image"
-                style={{ backgroundImage: `url(${slides[0]})` }}
-              />
-              <div className="what-card-body">
-                <span className="what-tag">AI Education</span>
-                <h3>AI Education</h3>
-                <p>
-                  We introduce children to artificial intelligence concepts in
-                  simple, engaging ways that spark curiosity and critical
-                  thinking.
-                </p>
+            <FadeIn delay={0}>
+              <div className="what-card">
+                <div
+                  className="what-card-image"
+                  style={{ backgroundImage: `url(${slides[0]})` }}
+                />
+                <div className="what-card-body">
+                  <span className="what-tag">AI Education</span>
+                  <h3>AI Education</h3>
+                  <p>
+                    We introduce children to artificial intelligence concepts in
+                    simple, engaging ways that spark curiosity and critical
+                    thinking.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="what-card">
-              <div
-                className="what-card-image"
-                style={{ backgroundImage: `url(${slides[1]})` }}
-              />
-              <div className="what-card-body">
-                <span className="what-tag">IT Skills</span>
-                <h3>IT Skills</h3>
-                <p>
-                  From basic computer literacy to coding fundamentals, we equip
-                  students with practical digital skills for the modern world.
-                </p>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <div className="what-card">
+                <div
+                  className="what-card-image"
+                  style={{ backgroundImage: `url(${slides[1]})` }}
+                />
+                <div className="what-card-body">
+                  <span className="what-tag">IT Skills</span>
+                  <h3>IT Skills</h3>
+                  <p>
+                    From basic computer literacy to coding fundamentals, we
+                    equip students with practical digital skills for the modern
+                    world.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="what-card">
-              <div
-                className="what-card-image"
-                style={{ backgroundImage: `url(${slides[2]})` }}
-              />
-              <div className="what-card-body">
-                <span className="what-tag">School Visits</span>
-                <h3>School Visits</h3>
-                <p>
-                  We go directly to rural and less-endowed schools, removing
-                  barriers and bringing education to where it is needed most.
-                </p>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="what-card">
+                <div
+                  className="what-card-image"
+                  style={{ backgroundImage: `url(${slides[2]})` }}
+                />
+                <div className="what-card-body">
+                  <span className="what-tag">School Visits</span>
+                  <h3>School Visits</h3>
+                  <p>
+                    We go directly to rural and less-endowed schools, removing
+                    barriers and bringing education to where it is needed most.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="what-card">
-              <div
-                className="what-card-image"
-                style={{ backgroundImage: `url(${slides[3]})` }}
-              />
-              <div className="what-card-body">
-                <span className="what-tag">Community</span>
-                <h3>Community Building</h3>
-                <p>
-                  We build a network of passionate volunteers and educators
-                  committed to bridging the digital divide in Ghana.
-                </p>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <div className="what-card">
+                <div
+                  className="what-card-image"
+                  style={{ backgroundImage: `url(${slides[3]})` }}
+                />
+                <div className="what-card-body">
+                  <span className="what-tag">Community</span>
+                  <h3>Community Building</h3>
+                  <p>
+                    We build a network of passionate volunteers and educators
+                    committed to bridging the digital divide in Ghana.
+                  </p>
+                </div>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
