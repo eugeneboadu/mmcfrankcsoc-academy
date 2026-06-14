@@ -230,3 +230,15 @@
   display: block;
   margin-bottom: 20px;
 }
+
+@media (max-width: 768px) {
+  .stories-hero {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+
+  .stories-hero-overlay {
+    min-height: 400px;
+    padding: 70px 20px;
+  }
+}

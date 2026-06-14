@@ -200,3 +200,15 @@
     padding: 25px;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-hero {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+
+  .contact-hero-overlay {
+    min-height: 400px;
+    padding: 70px 20px;
+  }
+}

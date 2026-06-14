@@ -373,3 +373,15 @@
 .back-btn:hover {
   background-color: var(--light-gray);
 }
+
+@media (max-width: 768px) {
+  .join-hero {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+
+  .join-hero-overlay {
+    min-height: 400px;
+    padding: 70px 20px;
+  }
+}

@@ -215,3 +215,15 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .gallery-hero {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+
+  .gallery-hero-overlay {
+    min-height: 400px;
+    padding: 70px 20px;
+  }
+}
